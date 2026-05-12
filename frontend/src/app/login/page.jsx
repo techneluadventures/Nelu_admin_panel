@@ -3,24 +3,26 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { api, getUser } from '../../lib/api';
+import { api, getUser } from '../../lib/api'
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  // useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const user = getUser();
     if (user) router.push('/');
   }, [router]);
 
-  if (!mounted) return null; // Prevent hydration mismatch
-
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  if (!mounted) return null; // Prevent hydration mismatch
+
+
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -40,7 +42,6 @@ export default function LoginPage() {
     }
   }
 
-  const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
 
   return (
