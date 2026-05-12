@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --primary-orange: #FC922E;
+  --primary-green: #014905;
+  --primary-black: #000000;
+  
+  --font-poppins: 'Poppins', sans-serif;
+  --font-georgia: 'Georgia Pro', Georgia, serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary-orange);
+  --color-brand-green: var(--primary-green);
+  --color-brand-black: var(--primary-black);
+  
+  /* Map Tailwind defaults used in the app to brand colors */
+  --color-green-600: var(--primary-green);
+  --color-green-700: #013804;
+  --color-green-50: #e6f3e6;
+  --color-green-100: #cde6cd;
+  --color-green-200: #b4dab4;
+  --color-green-800: #012b03;
+  --color-green-900: #001d02;
+
+  --color-blue-600: var(--primary-orange);
+  --color-blue-700: #e58327;
+  --color-blue-50: #fff4eb;
+  --color-blue-100: #ffe8d6;
+  --color-blue-800: #cc7422;
+  
+  --color-indigo-600: var(--primary-orange);
+  --color-indigo-700: #e58327;
+  --color-indigo-50: #fff4eb;
+
+  --font-sans: var(--font-poppins);
+  --font-logo: var(--font-georgia);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ANTI-GHOSTING PROTOCOL: High Contrast Forms */
+input, textarea, select {
+  color: #1a1a1a !important;
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+  font-family: var(--font-sans) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-green) !important;
+  outline: none;
+  ring: 2px;
+  ring-color: var(--primary-green);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+.font-logo {
+  font-family: var(--font-georgia);
+}
